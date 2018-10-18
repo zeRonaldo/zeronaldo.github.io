@@ -1,0 +1,26 @@
+{
+  "name": "catclicker",
+  "version": "1.0.0",
+  "description": "A udacity Project with a hint of boredom",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeRonaldo/CatClicker.git"
+  },
+  "author": "zeRonaldo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zeRonaldo/CatClicker/issues"
+  },
+  "homepage": "https://github.com/zeRonaldo/CatClicker#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0"
+  },
+  "dependencies": {
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-sass": "^4.0.2"
+  }
+}
