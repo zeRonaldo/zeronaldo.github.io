@@ -16,7 +16,10 @@ catClicker.prototype.loadImg = function() {
 	let api_key = '3q2HdIJkyrwyzbpPqPsVDzSOE8XL0uC0';
 	let jsonObject = fetch('http://api.giphy.com/v1/gifs/random?tag=cute+kitten&api_key='+api_key,{
 		Method: 'GET',
-		mode:'no-cors'
+		mode:'no-cors',
+		headers:{
+			'Access-Control-Allow-Origin' : 'http://api.giphy.com/'
+		}
 	}).then((response) => response.json())
     .then((json) => {
        // do stuff with responseJSON here...
