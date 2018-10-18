@@ -18,7 +18,7 @@ catClicker.prototype.loadImg = function() {
 		Method: 'GET',
 		mode:'no-cors',
 		headers:{
-			'Access-Control-Allow-Origin' : 'http://api.giphy.com/'
+			'Access-Control-Allow-Origin' : '*'
 		}
 	}).then((response) => response.json())
     .then((json) => {
