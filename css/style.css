@@ -1,7 +1,27 @@
+body{
+  margin:0;
+  padding: 0;
+}
 main{
   display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
+flex-direction: column;
+align-content: center;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background: #333;
+margin: 0;
+padding: 0;
+}
+h1{
+  font-size: 2.2rem;
+  color #eee;
+  background-color: #EB5757;
+  font-family : 'Josefin Sans', sans-serif; 
+  transform : rotate(10deg)
+}
+p{
+ font-size: 1.7rem;
+ color: #eee;
+ font-family: 'Lato', sans-serif;
 }
