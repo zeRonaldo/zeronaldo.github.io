@@ -4,15 +4,15 @@ var autoprefixer = require('gulp-autoprefixer');
 
 
 gulp.task('styles', function(done){
-	gulp.src('sass/**/**.scss')
+	gulp.src('src/Assets/Styles/sass/**/**.scss')
 		.pipe(sass().on('error', sass.logError))
 		.pipe(autoprefixer({
 			browsers:['last 2 versions']
 		}))
-		.pipe(gulp.dest('./css'));
+		.pipe(gulp.dest('src/Assets/Styles/css'));
 	done();
 });
 
 gulp.task('default', function () {
-	gulp.watch('sass/**/**.scss', ['styles']);
+	gulp.watch('src/Assets/Styles/sass/**/**.scss', ['styles']);
 });

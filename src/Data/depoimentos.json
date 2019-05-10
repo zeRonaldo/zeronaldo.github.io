@@ -1,0 +1,23 @@
+[
+    {
+        "texto": "O José Ronaldo tem uma característica muito peculiar: não tem medo de aprender. É autodidata e quando se propõe a criar algo, ou a desenvolver uma nova habilidade, tem total dedicação naquilo. Executa as tarefas de forma detalhada, e tem uma criatividade surpreendente.",
+        "nome": "Beatriz Costa",
+        "url": "",
+        "img_perfil": "",
+        "relação": "Estudaram juntos"
+    },
+    {
+        "texto": "José Ronaldo é um profissional altamente amigável e dedicado e bastante proativo. Certamente qualquer empresa ficará muito satisfeita com seu trabalho.",
+        "nome": "Felipe Porge Xavier",
+        "img_perfil": "",
+        "url": "",
+        "relação": "Estudaram juntos"
+    },
+    {
+        "texto": "José is a very nice and fun guy, very pleasant to work with. He's kind and always helpful.",
+        "nome": "Diego Aguir Selzlein",
+        "img_perfil": "",
+        "url": "",
+        "relação": "ex-Colegas de Trabalho"
+    }
+]
