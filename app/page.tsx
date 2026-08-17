@@ -1,3 +1,5 @@
+import { MotionObserver } from "./MotionObserver";
+
 const expertise = [
   {
     number: "01",
@@ -25,6 +27,7 @@ const principles = [
 export default function Home() {
   return (
     <main>
+      <MotionObserver />
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="Back to top">
           SE<span>—</span>BR
@@ -45,14 +48,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section expertise" id="practice">
+      <section className="section expertise" id="practice" data-reveal>
         <div className="section-intro">
           <p className="kicker">What I do</p>
           <h2>Engineering that survives contact with reality.</h2>
         </div>
         <div className="expertise-list">
           {expertise.map((item) => (
-            <article key={item.number}>
+            <article key={item.number} data-reveal>
               <span>{item.number}</span>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
@@ -61,14 +64,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section method">
+      <section className="section method" data-reveal>
         <div className="method-title">
           <p className="kicker">How I work</p>
           <h2>Less theatre.<br />More signal.</h2>
         </div>
         <div className="principles">
           {principles.map(([title, text], index) => (
-            <article key={title}>
+            <article key={title} data-reveal>
               <span>0{index + 1}</span>
               <div><h3>{title}</h3><p>{text}</p></div>
             </article>
@@ -76,7 +79,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section lab">
+      <section className="section lab" data-reveal>
         <div>
           <p className="kicker">Lab / Experiments</p>
           <h2>Small ideas.<br />Sharp tools.<br />No roadmap.</h2>
@@ -88,7 +91,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section about" id="about">
+      <section className="section about" id="about" data-reveal>
         <p className="kicker">About</p>
         <div className="about-copy">
           <h2>I’m interested in the whole thing.</h2>
@@ -98,7 +101,7 @@ export default function Home() {
         <aside><span>Currently</span><p>Building mobile software from Brazil, working across products, platforms, and time zones.</p></aside>
       </section>
 
-      <section className="section experience">
+      <section className="section experience" data-reveal>
         <p className="kicker">Experience, safely summarized</p>
         <div className="experience-line">
           <h2>Years spent building and improving digital products.</h2>
@@ -107,7 +110,7 @@ export default function Home() {
         <p className="nda-note">No client names, secret dashboards, or suspiciously specific growth charts. Good work can respect a good NDA.</p>
       </section>
 
-      <footer id="contact">
+      <footer id="contact" data-reveal>
         <p className="kicker">Contact</p>
         <h2>Have a hard problem?<br /><em>Good.</em></h2>
         <div className="footer-bottom">
@@ -119,4 +122,3 @@ export default function Home() {
     </main>
   );
 }
-
