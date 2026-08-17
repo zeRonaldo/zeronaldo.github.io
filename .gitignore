@@ -1,8 +1,9 @@
 node_modules
+.yarn/cache
+.yarn/install-state.gz
 .next
 out
 .DS_Store
 *.log
 .env*
 !.env.example
-
