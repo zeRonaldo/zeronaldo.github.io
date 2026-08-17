@@ -38,7 +38,10 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="eyebrow"><span>Software engineer</span><span>Brazil · Remote</span></div>
-        <h1>I build things.<br /><em>Mostly software.</em><br />Always with intent.</h1>
+        <h1>
+          <span className="type-line"><span>I build things.</span></span>
+          <em>Mostly software.</em><br />Always with intent.
+        </h1>
         <div className="hero-bottom">
           <p>Mobile products, useful systems, and the kind of problems that only show up after everything was supposed to be working.</p>
           <a className="round-link" href="#practice" aria-label="Explore my practice">↓</a>
