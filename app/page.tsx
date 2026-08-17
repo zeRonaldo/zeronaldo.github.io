@@ -1,4 +1,5 @@
 import { MotionObserver } from "./MotionObserver";
+import { LivingNav } from "./LivingNav";
 
 const expertise = [
   {
@@ -32,11 +33,7 @@ export default function Home() {
         <a className="wordmark" href="#top" aria-label="Back to top">
           SE<span>—</span>BR
         </a>
-        <nav aria-label="Primary navigation">
-          <a href="#practice">Practice</a>
-          <a href="#about">About</a>
-          <a className="nav-contact" href="#contact">Contact ↗</a>
-        </nav>
+        <LivingNav />
       </header>
 
       <section className="hero" id="top">
@@ -64,7 +61,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section method" data-reveal>
+      <section className="section method" id="method" data-reveal>
         <div className="method-title">
           <p className="kicker">How I work</p>
           <h2>Less theatre.<br />More signal.</h2>
@@ -79,7 +76,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section lab" data-reveal>
+      <section className="section lab" id="lab" data-reveal>
         <div>
           <p className="kicker">Lab / Experiments</p>
           <h2>Small ideas.<br />Sharp tools.<br />No roadmap.</h2>
@@ -101,7 +98,7 @@ export default function Home() {
         <aside><span>Currently</span><p>Building mobile software from Brazil, working across products, platforms, and time zones.</p></aside>
       </section>
 
-      <section className="section experience" data-reveal>
+      <section className="section experience" id="experience" data-reveal>
         <p className="kicker">Experience, safely summarized</p>
         <div className="experience-line">
           <h2>Years spent building and improving digital products.</h2>
