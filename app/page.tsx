@@ -1,5 +1,7 @@
 import { MotionObserver } from "./MotionObserver";
 import { LivingNav } from "./LivingNav";
+import Image from "next/image";
+import portrait from "../public/about-dungeon-master.png";
 
 const expertise = [
   {
@@ -92,7 +94,19 @@ export default function Home() {
       </section>
 
       <section className="section about" id="about" data-reveal>
-        <p className="kicker">About</p>
+        <div className="about-identity">
+          <p className="kicker">About</p>
+          <figure className="portrait-frame">
+            <Image
+              src={portrait}
+              alt="Black-and-white portrait wearing a Dungeon Master hat"
+              fill
+              sizes="(max-width: 760px) 90vw, 28vw"
+              placeholder="blur"
+            />
+            <figcaption>Systems, stories — same problem: edge cases.</figcaption>
+          </figure>
+        </div>
         <div className="about-copy">
           <h2>I’m interested in the whole thing.</h2>
           <p>I’m a software engineer focused on mobile products and complex interactions. React Native is where I spend most of my time, but frameworks are tools, not identities.</p>
