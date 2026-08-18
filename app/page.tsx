@@ -28,14 +28,14 @@ const principles = [
 ];
 
 const heroModules = [
-  { className: "module-a", first: "{ sync }", second: "↳ native" },
-  { className: "module-b", first: "◫", second: "01 / 10" },
-  { className: "module-c", first: "<state />", second: "offline: true" },
-  { className: "module-d", first: "⌁", second: "await reality" },
-  { className: "module-e", first: "[ event ]", second: "→ recover()" },
-  { className: "module-f", first: "◎", second: "retry: 03" },
-  { className: "module-g", first: "if (edge)", second: "handle();" },
-  { className: "module-h", first: "◇—◇", second: "RN ↔ native" },
+  { className: "module-a", icon: "/hero-icons/ai.png", code: "model.run()" },
+  { className: "module-b", icon: "/hero-icons/cloud.png", code: "sync → cloud" },
+  { className: "module-c", icon: "/hero-icons/react.png", code: "<state />" },
+  { className: "module-d", icon: "/hero-icons/apple.png", code: "await native" },
+  { className: "module-e", icon: "/hero-icons/android.png", code: "offline: true" },
+  { className: "module-f", icon: "/hero-icons/code.png", code: "handle(edge)" },
+  { className: "module-g", icon: "/hero-icons/css.png", code: "layout: intent" },
+  { className: "module-h", icon: "/hero-icons/react.png", code: "RN ↔ native" },
 ];
 
 export default function Home() {
@@ -53,8 +53,10 @@ export default function Home() {
         <div className="hero-system" aria-hidden="true">
           {heroModules.map((module, index) => (
             <div className={`system-module ${module.className}`} key={module.className}>
-              <span>{module.first}</span>
-              <span>{module.second}</span>
+              <div className="module-icon">
+                <Image src={module.icon} alt="" fill sizes="(max-width: 760px) 12vw, 6vw" />
+              </div>
+              <span className="module-code">{module.code}</span>
               <small>0{index + 1}</small>
             </div>
           ))}
