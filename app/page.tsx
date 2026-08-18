@@ -27,6 +27,17 @@ const principles = [
   ["Care about the last 10%", "Loading, failure, interruption, recovery. The unglamorous states are still the product."],
 ];
 
+const heroModules = [
+  { className: "module-a", first: "{ sync }", second: "↳ native" },
+  { className: "module-b", first: "◫", second: "01 / 10" },
+  { className: "module-c", first: "<state />", second: "offline: true" },
+  { className: "module-d", first: "⌁", second: "await reality" },
+  { className: "module-e", first: "[ event ]", second: "→ recover()" },
+  { className: "module-f", first: "◎", second: "retry: 03" },
+  { className: "module-g", first: "if (edge)", second: "handle();" },
+  { className: "module-h", first: "◇—◇", second: "RN ↔ native" },
+];
+
 export default function Home() {
   return (
     <main>
@@ -39,6 +50,18 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top">
+        <div className="hero-system" aria-hidden="true">
+          {heroModules.map((module, index) => (
+            <div className={`system-module ${module.className}`} key={module.className}>
+              <span>{module.first}</span>
+              <span>{module.second}</span>
+              <small>0{index + 1}</small>
+            </div>
+          ))}
+          <div className="system-block block-ink" />
+          <div className="system-block block-forest" />
+          <div className="system-block block-accent" />
+        </div>
         <div className="eyebrow"><span>Software engineer</span><span>Brazil · Remote</span></div>
         <h1>
           <span className="type-line"><span>I build things.</span></span>
