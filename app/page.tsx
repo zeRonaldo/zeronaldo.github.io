@@ -154,7 +154,7 @@ export default function Home() {
         <h2>Have a hard problem?<br /><em>Good.</em></h2>
         <div className="footer-bottom">
           <p>Open to thoughtful conversations about products, engineering, and ambitious things worth building.</p>
-          <a href="mailto:hello@yourdomain.com">hello@yourdomain.com ↗</a>
+          <a href="mailto:hello@zeronaldo.dev">hello@zeronaldo.dev ↗</a>
         </div>
         <div className="footer-meta"><span>© {new Date().getFullYear()}</span><span>Built with care. And CSS.</span></div>
       </footer>
