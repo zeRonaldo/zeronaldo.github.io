@@ -115,7 +115,9 @@ h1 em, footer h2 em { font-family:"Newsreader",serif; font-weight:300; }
 .field-notes article { padding:28px 3vw 44px 0; border-right:1px solid var(--line); border-bottom:1px solid var(--line); }
 .field-notes article:nth-child(even) { padding-left:3vw; padding-right:0; border-right:0; }
 .field-notes article:nth-last-child(-n + 2) { border-bottom:0; }
-.field-notes article > span, .field-meta { font:400 9px/1.5 "DM Mono",monospace; text-transform:uppercase; letter-spacing:.08em; }
+.field-note-index { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+.field-note-index span, .field-note-index strong, .field-meta { font:400 9px/1.5 "DM Mono",monospace; text-transform:uppercase; letter-spacing:.08em; }
+.field-note-index strong { color:var(--forest); font-weight:500; }
 .field-notes .field-meta { min-height:0; margin:22px 0 34px; color:var(--wood); }
 .field-notes h3 { min-height:0; margin:0 0 20px; font-size:clamp(24px,2.4vw,38px); line-height:1.08; font-weight:500; letter-spacing:-.04em; }
 .field-notes article > h3 + p { margin:0; color:#52524b; font-size:14px; line-height:1.7; }
@@ -127,8 +129,10 @@ h1 em, footer h2 em { font-family:"Newsreader",serif; font-weight:300; }
 .resume-dialog::backdrop { background:rgba(36,35,31,.72); backdrop-filter:blur(5px); }
 .resume-sheet { padding:28px 40px 36px; }
 .resume-actions { display:flex; justify-content:flex-end; gap:22px; padding-bottom:22px; border-bottom:1px solid var(--line); }
-.resume-actions button { border:0; padding:0; background:none; color:inherit; font:500 9px/1 "DM Mono",monospace; text-transform:uppercase; letter-spacing:.08em; cursor:pointer; }
-.resume-actions button:hover { color:var(--bougainvillea); }
+.resume-actions button,
+.resume-actions a { border:0; padding:0; background:none; color:inherit; font:500 9px/1 "DM Mono",monospace; text-transform:uppercase; letter-spacing:.08em; cursor:pointer; }
+.resume-actions button:hover,
+.resume-actions a:hover { color:var(--bougainvillea); }
 .resume-header { display:grid; grid-template-columns:1.25fr 1fr; gap:7vw; align-items:end; padding:44px 0; }
 .resume-header h2 { margin:18px 0 0; font-size:clamp(48px,6vw,84px); line-height:.84; letter-spacing:-.065em; font-weight:500; }
 .resume-contact { display:flex; flex-direction:column; align-items:flex-start; gap:8px; font-size:13px; }
@@ -142,6 +146,7 @@ h1 em, footer h2 em { font-family:"Newsreader",serif; font-weight:300; }
 .resume-role { display:grid; grid-template-columns:130px 1fr; gap:22px; padding:18px 0; border-bottom:1px solid var(--line); }
 .resume-role > span { font:400 9px/1.5 "DM Mono",monospace; }
 .resume-role h3 { margin:0 0 8px; font-size:17px; font-weight:500; }
+.resume-role small { display:block; margin-bottom:6px; color:var(--wood); font:500 8px/1.4 "DM Mono",monospace; text-transform:uppercase; letter-spacing:.08em; }
 .resume-role p { margin:0; color:#595951; font-size:12px; line-height:1.55; }
 .resume-footer { min-height:0; display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:30px; padding:22px 0 0; border-top:1px solid var(--ink); background:none; color:var(--ink); }
 .resume-footer span { font:500 9px/1.4 "DM Mono",monospace; text-transform:uppercase; }
@@ -222,13 +227,24 @@ footer h2 { font-size:clamp(58px,9vw,140px); font-weight:500; line-height:.84; l
   .contact-links { justify-self:start; align-items:flex-start; }
 }
 @media print {
+  @page { size:A4; margin:12mm; }
   body:has(.resume-dialog[open]) * { visibility:hidden; }
   body:has(.resume-dialog[open]) .resume-dialog,
   body:has(.resume-dialog[open]) .resume-dialog * { visibility:visible; }
-  .resume-dialog[open] { position:absolute; inset:0; width:100%; max-height:none; margin:0; box-shadow:none; }
+  .resume-dialog[open] { position:absolute; inset:0; width:100%; max-height:none; margin:0; overflow:visible; box-shadow:none; }
   .resume-actions { display:none; }
   .resume-sheet { padding:0; }
-  .resume-header h2 { font-size:56px; }
+  .resume-header { padding:18px 0 22px; }
+  .resume-header h2 { font-size:46px; }
+  .resume-summary { padding:18px 0; }
+  .resume-summary > p { font-size:15px; }
+  .resume-body { padding:20px 0; }
+  .resume-roles { margin-top:14px; }
+  .resume-role { grid-template-columns:100px 1fr; padding:10px 0; break-inside:avoid; }
+  .resume-role h3 { margin-bottom:4px; font-size:14px; }
+  .resume-role p { font-size:10px; line-height:1.4; }
+  .resume-footer { padding-top:14px; break-inside:avoid; }
+  .resume-footer p { font-size:9px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior:auto; }

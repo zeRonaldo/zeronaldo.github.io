@@ -25,6 +25,7 @@ const expertise = [
 const fieldNotes = [
   {
     number: "01",
+    company: "Popstand",
     title: "Healthcare operations leadership",
     meta: "Product management · ~5 engineers",
     text: "Led frontend, backend, and mobile delivery for an international healthcare client. Broke large Jira items into parallel workstreams, more than doubling monthly throughput while preserving peer review and integration quality.",
@@ -32,6 +33,7 @@ const fieldNotes = [
   },
   {
     number: "02",
+    company: "Popstand",
     title: "A simpler way to create on-chain",
     meta: "Next.js · TypeScript · Web3",
     text: "Built the initial structure of an NFT marketplace across frontend, application APIs, deployment, and stakeholder communication. Designed a validated prototype that presented dependent blockchain operations as one guided creation flow.",
@@ -39,6 +41,7 @@ const fieldNotes = [
   },
   {
     number: "03",
+    company: "Sortium",
     title: "Frontend systems with sharp edges",
     meta: "Next.js · TypeScript · Styled Components",
     text: "Built responsive, accessible, motion-led interfaces for established and experimental digital products. Designed a composable transactional-email system driven by reusable blocks and backend-provided content.",
@@ -46,6 +49,7 @@ const fieldNotes = [
   },
   {
     number: "04",
+    company: "Entermotion",
     title: "Production mobile, without mythology",
     meta: "Two healthcare apps · iOS + Android",
     text: "Maintained patient- and provider-facing React Native applications covering scheduling, messaging, forms, notifications, billing, and payments. Supported the mobile tech lead in investigating and validating production bugs.",
@@ -150,7 +154,7 @@ export default function Home() {
         <div className="field-notes">
           {fieldNotes.map((note) => (
             <article key={note.number} data-reveal>
-              <span>{note.number}</span>
+              <div className="field-note-index"><span>{note.number}</span><strong>{note.company}</strong></div>
               <p className="field-meta">{note.meta}</p>
               <h3>{note.title}</h3>
               <p>{note.text}</p>
