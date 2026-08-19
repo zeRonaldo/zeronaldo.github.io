@@ -86,8 +86,10 @@ h1 em, footer h2 em { font-family:"Newsreader",serif; font-weight:300; }
 .lab { min-height:620px; display:grid; grid-template-columns:1.4fr 1fr; gap:10vw; background:var(--stone); position:relative; overflow:hidden; }
 .lab::before { content:""; position:absolute; width:clamp(140px,18vw,280px); aspect-ratio:1; border:1px solid rgba(107,70,50,.35); border-radius:50%; right:-5vw; top:-7vw; }
 .lab .kicker { margin-bottom:44px; }
-.lab-note { align-self:end; border-top:1px solid var(--ink); padding-top:20px; position:relative; }
-.lab-note p { font-size:21px; line-height:1.55; margin:0 0 80px; }
+.lab-list { align-self:end; }
+.lab-note { border-top:1px solid var(--ink); padding:20px 0 28px; position:relative; }
+.lab-note + .lab-note { margin-top:24px; }
+.lab-note p { font-size:18px; line-height:1.55; margin:0 0 32px; }
 .lab-note h3 { margin:18px 0 14px; font-size:clamp(28px,3vw,44px); font-weight:500; letter-spacing:-.04em; }
 .lab-note .lab-status { font:500 9px/1.4 "DM Mono",monospace; text-transform:uppercase; letter-spacing:.1em; color:var(--wood); }
 .lab-note strong { font:500 10px "DM Mono",monospace; text-transform:uppercase; letter-spacing:.1em; }

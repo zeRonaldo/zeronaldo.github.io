@@ -133,12 +133,21 @@ export default function Home() {
           <p className="kicker">Lab / Experiments</p>
           <h2>Small ideas.<br />Sharp tools.<br />No roadmap.</h2>
         </div>
-        <div className="lab-note">
-          <span className="status-dot" />
-          <span className="lab-status">In progress · Personal experiment</span>
-          <h3>RPG Session Board</h3>
-          <p>A focused space for shaping tabletop sessions: keeping ideas, moving parts, and the inevitable chaos visible enough to actually use at the table.</p>
-          <strong>Built because campaign notes deserve better than archaeology.</strong>
+        <div className="lab-list">
+          <article className="lab-note">
+            <span className="status-dot" />
+            <span className="lab-status">In progress · Personal experiment</span>
+            <h3>RPG Session Board</h3>
+            <p>A focused space for shaping tabletop sessions: keeping ideas, moving parts, and the inevitable chaos visible enough to actually use at the table.</p>
+            <strong>Campaign notes deserve better than archaeology.</strong>
+          </article>
+          <article className="lab-note">
+            <span className="status-dot" />
+            <span className="lab-status">Product concept · Early exploration</span>
+            <h3>Playdate</h3>
+            <p>A local map for parents looking for places that are genuinely kid-friendly — with useful details about play areas, monitors, age ranges, pricing, and recent experiences from other parents.</p>
+            <strong>Their play. Your date.</strong>
+          </article>
         </div>
       </section>
 
