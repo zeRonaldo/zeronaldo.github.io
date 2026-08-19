@@ -7,39 +7,49 @@ import { ResumeModal } from "./ResumeModal";
 const expertise = [
   {
     number: "01",
-    title: "Mobile engineering",
-    text: "Product-minded mobile development with React Native and TypeScript across iOS, Android, and the native edges in between.",
+    title: "Product engineering",
+    text: "From an unclear business problem to a system people can actually use — requirements, trade-offs, interfaces, APIs, and delivery included.",
   },
   {
     number: "02",
-    title: "Product systems",
-    text: "Interfaces, GraphQL, Apollo Client, data flows, offline states, and the invisible structure that makes a product feel obvious.",
+    title: "Mobile products",
+    text: "React Native and TypeScript across iOS and Android, grounded in production maintenance rather than framework theatre.",
   },
   {
     number: "03",
-    title: "The difficult bits",
-    text: "Performance, background behavior, platform constraints, and bugs with suspiciously good timing.",
+    title: "Frontend systems",
+    text: "Next.js, responsive interfaces, motion, transactional communication, and the reusable structure behind polished product experiences.",
   },
 ];
 
 const fieldNotes = [
   {
     number: "01",
-    title: "Healthcare mobile ecosystem",
-    meta: "Two apps · iOS + Android",
-    text: "Owned production workflows across scheduling, messaging, billing, and payments. Broke monolithic components into modular hooks, improved high-traffic lists, and traced a memory crash back to a third-party native SDK.",
+    title: "Healthcare operations leadership",
+    meta: "Product management · ~5 engineers",
+    text: "Led frontend, backend, and mobile delivery for an international healthcare client. Broke large Jira items into parallel workstreams, more than doubling monthly throughput while preserving peer review and integration quality.",
+    details: ["HL7-based reporting across multiple US states", "Privacy-sensitive laboratory workflows", "Client communication and technical coaching"],
   },
   {
     number: "02",
-    title: "Healthcare operations platform",
-    meta: "Technical leadership · ~5 engineers",
-    text: "Reorganized delivery into smaller parallel workstreams, more than doubling monthly throughput while preserving review and integration quality. Guided HL7 reporting integrations across multiple US states.",
+    title: "A simpler way to create on-chain",
+    meta: "Next.js · TypeScript · Web3",
+    text: "Built the initial structure of an NFT marketplace across frontend, application APIs, deployment, and stakeholder communication. Designed a validated prototype that presented dependent blockchain operations as one guided creation flow.",
+    details: ["Collection and asset creation", "Third-party Web3 APIs", "Feasibility before premature resilience"],
   },
   {
     number: "03",
-    title: "Digital collectibles product",
-    meta: "Product engineering · Web3",
-    text: "Replaced three separate NFT-creation forms with one guided flow and built a feasibility-first prototype that orchestrated dependent blockchain operations without pretending the hard parts did not exist.",
+    title: "Frontend systems with sharp edges",
+    meta: "Next.js · TypeScript · Styled Components",
+    text: "Built responsive, accessible, motion-led interfaces for established and experimental digital products. Designed a composable transactional-email system driven by reusable blocks and backend-provided content.",
+    details: ["Gmail, Outlook, and device validation", "CSS animation and responsive UI", "Registration and error-state ownership"],
+  },
+  {
+    number: "04",
+    title: "Production mobile, without mythology",
+    meta: "Two healthcare apps · iOS + Android",
+    text: "Maintained patient- and provider-facing React Native applications covering scheduling, messaging, forms, notifications, billing, and payments. Supported the mobile tech lead in investigating and validating production bugs.",
+    details: ["React Native and TypeScript", "GraphQL and Apollo Client", "Remote collaboration in English"],
   },
 ];
 
@@ -128,6 +138,31 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section experience" id="experience" data-reveal>
+        <p className="kicker">Selected experience · NDA-safe</p>
+        <div className="experience-line">
+          <h2>The work,<br />not the logo wall.</h2>
+          <div className="experience-cta">
+            <p>Product leadership · Web3 · Frontend systems · Production mobile</p>
+            <ResumeModal />
+          </div>
+        </div>
+        <div className="field-notes">
+          {fieldNotes.map((note) => (
+            <article key={note.number} data-reveal>
+              <span>{note.number}</span>
+              <p className="field-meta">{note.meta}</p>
+              <h3>{note.title}</h3>
+              <p>{note.text}</p>
+              <ul>
+                {note.details.map((detail) => <li key={detail}>{detail}</li>)}
+              </ul>
+            </article>
+          ))}
+        </div>
+        <p className="nda-note">Specific enough to show the work. Careful enough to respect the people who trusted me with it.</p>
+      </section>
+
       <section className="section lab" id="lab" data-reveal>
         <div>
           <p className="kicker">Lab / Experiments</p>
@@ -171,28 +206,6 @@ export default function Home() {
           <p>I like understanding the system, finding where it bends, and building something simpler, reliable, and pleasant to use.</p>
         </div>
         <aside><span>Currently</span><p>Building mobile software from Brazil, comfortably working in English across international products, platforms, and time zones.</p></aside>
-      </section>
-
-      <section className="section experience" id="experience" data-reveal>
-        <p className="kicker">Experience, safely summarized</p>
-        <div className="experience-line">
-          <h2>Real problems.<br />Names withheld.</h2>
-          <div className="experience-cta">
-            <p>Cross-functional teams · Mobile architecture · Product engineering · Technical direction</p>
-            <ResumeModal />
-          </div>
-        </div>
-        <div className="field-notes">
-          {fieldNotes.map((note) => (
-            <article key={note.number} data-reveal>
-              <span>{note.number}</span>
-              <p className="field-meta">{note.meta}</p>
-              <h3>{note.title}</h3>
-              <p>{note.text}</p>
-            </article>
-          ))}
-        </div>
-        <p className="nda-note">No client names, secret dashboards, or suspiciously specific growth charts. Good work can respect a good NDA.</p>
       </section>
 
       <footer id="contact" data-reveal>

@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 const sections = [
   { id: "practice", label: "Practice" },
   { id: "method", label: "Method" },
+  { id: "experience", label: "Experience" },
   { id: "lab", label: "Lab" },
   { id: "about", label: "About" },
-  { id: "experience", label: "Experience" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -60,4 +60,3 @@ export function LivingNav() {
     </nav>
   );
 }
-

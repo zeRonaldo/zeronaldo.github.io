@@ -4,19 +4,19 @@ import { useRef } from "react";
 
 const roles = [
   {
-    period: "2023 — 2026",
-    title: "React Native Developer",
-    summary: "Two production healthcare apps across iOS and Android, with ownership spanning scheduling, messaging, notifications, billing, payments, performance, and native integrations.",
+    period: "2020 — 2022",
+    title: "Product Manager · Frontend Developer",
+    summary: "Progressed from hands-on product engineering into leadership of a five-person healthcare team. More than doubled monthly delivery throughput and guided privacy-sensitive laboratory and state-reporting integrations.",
   },
   {
     period: "2022 — 2023",
     title: "Frontend Developer",
-    summary: "Responsive, accessible, motion-led interfaces and transactional systems for established and experimental digital products.",
+    summary: "Next.js and TypeScript interfaces, motion-led experimental products, and a composable transactional-email system validated across major clients and devices.",
   },
   {
-    period: "2020 — 2022",
-    title: "Product Manager · Frontend Developer",
-    summary: "Technical leadership for an international healthcare platform, plus product engineering across web3, mobile, APIs, and deployment.",
+    period: "2023 — 2026",
+    title: "React Native Developer",
+    summary: "Maintained patient- and provider-facing healthcare apps across iOS and Android using React Native, TypeScript, GraphQL, and Apollo Client.",
   },
   {
     period: "2016 — 2020",
@@ -65,7 +65,7 @@ export function ResumeModal() {
           </header>
 
           <section className="resume-summary">
-            <p>I build and maintain production mobile products, with a product-management background that keeps the problem, the user, and the trade-offs in the room.</p>
+            <p>I move comfortably between engineering and product: shaping the problem, building the system, and making delivery legible to the people around it.</p>
             <aside>
               <span>Based in Brazil</span>
               <span>International & distributed teams</span>
@@ -87,7 +87,7 @@ export function ResumeModal() {
 
           <footer className="resume-footer">
             <div><span>Core tools</span><p>React Native · TypeScript · GraphQL · Apollo Client · Next.js · Firebase</p></div>
-            <div><span>Native edges</span><p>Kotlin · CMake/NDK · CocoaPods · Xcode</p></div>
+            <div><span>Product & delivery</span><p>Technical leadership · Stakeholder communication · HL7-based reporting · Web3 APIs</p></div>
             <div><span>Education</span><p>Bachelor’s degree · Information Technology</p></div>
           </footer>
         </article>
