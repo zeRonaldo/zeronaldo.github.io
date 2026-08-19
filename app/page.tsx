@@ -2,22 +2,44 @@ import { MotionObserver } from "./MotionObserver";
 import { LivingNav } from "./LivingNav";
 import Image from "next/image";
 import portrait from "../public/about-dungeon-master.png";
+import { ResumeModal } from "./ResumeModal";
 
 const expertise = [
   {
     number: "01",
     title: "Mobile engineering",
-    text: "Product-minded mobile development across React Native, iOS, Android, and the native edges in between.",
+    text: "Product-minded mobile development with React Native and TypeScript across iOS, Android, and the native edges in between.",
   },
   {
     number: "02",
     title: "Product systems",
-    text: "Interfaces, APIs, data flows, offline states, and the invisible structure that makes a product feel obvious.",
+    text: "Interfaces, GraphQL, Apollo Client, data flows, offline states, and the invisible structure that makes a product feel obvious.",
   },
   {
     number: "03",
     title: "The difficult bits",
     text: "Performance, background behavior, platform constraints, and bugs with suspiciously good timing.",
+  },
+];
+
+const fieldNotes = [
+  {
+    number: "01",
+    title: "Healthcare mobile ecosystem",
+    meta: "Two apps · iOS + Android",
+    text: "Owned production workflows across scheduling, messaging, billing, and payments. Broke monolithic components into modular hooks, improved high-traffic lists, and traced a memory crash back to a third-party native SDK.",
+  },
+  {
+    number: "02",
+    title: "Healthcare operations platform",
+    meta: "Technical leadership · ~5 engineers",
+    text: "Reorganized delivery into smaller parallel workstreams, more than doubling monthly throughput while preserving review and integration quality. Guided HL7 reporting integrations across multiple US states.",
+  },
+  {
+    number: "03",
+    title: "Digital collectibles product",
+    meta: "Product engineering · Web3",
+    text: "Replaced three separate NFT-creation forms with one guided flow and built a feasibility-first prototype that orchestrated dependent blockchain operations without pretending the hard parts did not exist.",
   },
 ];
 
@@ -113,8 +135,10 @@ export default function Home() {
         </div>
         <div className="lab-note">
           <span className="status-dot" />
-          <p>A place for prototypes, open-source tools, visual studies, and other things built to answer “what if?”</p>
-          <strong>Experiments arriving as they become interesting.</strong>
+          <span className="lab-status">In progress · Personal experiment</span>
+          <h3>RPG Session Board</h3>
+          <p>A focused space for shaping tabletop sessions: keeping ideas, moving parts, and the inevitable chaos visible enough to actually use at the table.</p>
+          <strong>Built because campaign notes deserve better than archaeology.</strong>
         </div>
       </section>
 
@@ -137,14 +161,27 @@ export default function Home() {
           <p>I’m a software engineer focused on mobile products and complex interactions. React Native is where I spend most of my time, but frameworks are tools, not identities.</p>
           <p>I like understanding the system, finding where it bends, and building something simpler, reliable, and pleasant to use.</p>
         </div>
-        <aside><span>Currently</span><p>Building mobile software from Brazil, working across products, platforms, and time zones.</p></aside>
+        <aside><span>Currently</span><p>Building mobile software from Brazil, comfortably working in English across international products, platforms, and time zones.</p></aside>
       </section>
 
       <section className="section experience" id="experience" data-reveal>
         <p className="kicker">Experience, safely summarized</p>
         <div className="experience-line">
-          <h2>Years spent building and improving digital products.</h2>
-          <p>Cross-functional teams · Mobile architecture · Product engineering · Technical direction</p>
+          <h2>Real problems.<br />Names withheld.</h2>
+          <div className="experience-cta">
+            <p>Cross-functional teams · Mobile architecture · Product engineering · Technical direction</p>
+            <ResumeModal />
+          </div>
+        </div>
+        <div className="field-notes">
+          {fieldNotes.map((note) => (
+            <article key={note.number} data-reveal>
+              <span>{note.number}</span>
+              <p className="field-meta">{note.meta}</p>
+              <h3>{note.title}</h3>
+              <p>{note.text}</p>
+            </article>
+          ))}
         </div>
         <p className="nda-note">No client names, secret dashboards, or suspiciously specific growth charts. Good work can respect a good NDA.</p>
       </section>
@@ -154,7 +191,10 @@ export default function Home() {
         <h2>Have a hard problem?<br /><em>Good.</em></h2>
         <div className="footer-bottom">
           <p>Open to thoughtful conversations about products, engineering, and ambitious things worth building.</p>
-          <a href="mailto:hello@zeronaldo.dev">hello@zeronaldo.dev ↗</a>
+          <div className="contact-links">
+            <a href="mailto:hello@zeronaldo.dev">hello@zeronaldo.dev ↗</a>
+            <a href="https://www.linkedin.com/in/zeronaldo" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          </div>
         </div>
         <div className="footer-meta"><span>© {new Date().getFullYear()}</span><span>Built with care. And CSS.</span></div>
       </footer>
