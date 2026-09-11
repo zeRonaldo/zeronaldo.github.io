@@ -1,5 +1,5 @@
 import { MotionObserver } from "./MotionObserver";
-import { LivingNav } from "./LivingNav";
+import { BackToTop, LivingNav } from "./LivingNav";
 import Image from "next/image";
 import portrait from "../public/about-dungeon-master.png";
 import { ResumeModal } from "./ResumeModal";
@@ -8,7 +8,7 @@ const expertise = [
   {
     number: "01",
     title: "Product engineering",
-    text: "From an unclear business problem to a system people can actually use — requirements, trade-offs, interfaces, APIs, and delivery included.",
+    text: "I turn unclear business problems into systems people can actually use, covering requirements, trade-offs, interfaces, APIs, and delivery.",
   },
   {
     number: "02",
@@ -52,14 +52,14 @@ const fieldNotes = [
     company: "Entermotion",
     title: "Production mobile, without mythology",
     meta: "Two healthcare apps · iOS + Android",
-    text: "Maintained patient- and provider-facing React Native applications covering scheduling, messaging, forms, notifications, billing, and payments. Supported the mobile tech lead in investigating and validating production bugs.",
-    details: ["React Native and TypeScript", "GraphQL and Apollo Client", "Remote collaboration in English"],
+    text: "Helped build and evolve provider- and patient-facing React Native applications across iOS and Android, spanning scheduling, messaging, forms, billing, payments, and other healthcare workflows. Worked across GraphQL/Apollo data flows, performance, native behavior, application lifecycle, and difficult production issues.",
+    details: ["React Native and TypeScript", "iOS + Android / native debugging", "GraphQL and Apollo Client", "International collaboration in English"],
   },
 ];
 
 const principles = [
   ["Understand before building", "The first solution is usually just the fastest way to discover the real problem."],
-  ["Make the complex legible", "Good engineering leaves fewer mysteries behind — in the product and in the code."],
+  ["Make the complex legible", "Good engineering leaves fewer mysteries behind, both in the product and in the code."],
   ["Care about the last 10%", "Loading, failure, interruption, recovery. The unglamorous states are still the product."],
 ];
 
@@ -107,13 +107,12 @@ export default function Home() {
         </h1>
         <div className="hero-bottom">
           <p>Mobile products, useful systems, and the kind of problems that only show up after everything was supposed to be working.</p>
-          <a className="round-link" href="#practice" aria-label="Explore my practice">↓</a>
         </div>
       </section>
 
       <section className="section expertise" id="practice" data-reveal>
         <div className="section-intro">
-          <p className="kicker">What I do</p>
+          <p className="kicker">01 Practice · What I do</p>
           <h2>Engineering that survives contact with reality.</h2>
         </div>
         <div className="expertise-list">
@@ -125,11 +124,12 @@ export default function Home() {
             </article>
           ))}
         </div>
+        <a className="section-cue" href="#method" aria-label="Continue to how I work"><span className="chevron chevron-down" aria-hidden="true" /></a>
       </section>
 
       <section className="section method" id="method" data-reveal>
         <div className="method-title">
-          <p className="kicker">How I work</p>
+          <p className="kicker">02 Method · How I work</p>
           <h2>Less theatre.<br />More signal.</h2>
         </div>
         <div className="principles">
@@ -140,10 +140,11 @@ export default function Home() {
             </article>
           ))}
         </div>
+        <a className="section-cue" href="#experience" aria-label="Continue to selected experience"><span className="chevron chevron-down" aria-hidden="true" /></a>
       </section>
 
       <section className="section experience" id="experience" data-reveal>
-        <p className="kicker">Selected experience · NDA-safe</p>
+        <p className="kicker">03 Selected experience · NDA-safe</p>
         <div className="experience-line">
           <h2>The work,<br />not the logo wall.</h2>
           <div className="experience-cta">
@@ -165,11 +166,12 @@ export default function Home() {
           ))}
         </div>
         <p className="nda-note">Specific enough to show the work. Careful enough to respect the people who trusted me with it.</p>
+        <a className="section-cue" href="#lab" aria-label="Continue to experiments"><span className="chevron chevron-down" aria-hidden="true" /></a>
       </section>
 
       <section className="section lab" id="lab" data-reveal>
         <div>
-          <p className="kicker">Lab / Experiments</p>
+          <p className="kicker">04 Lab / Experiments</p>
           <h2>Small ideas.<br />Sharp tools.<br />No roadmap.</h2>
         </div>
         <div className="lab-list">
@@ -188,11 +190,12 @@ export default function Home() {
             <strong>Their play. Your date.</strong>
           </article>
         </div>
+        <a className="section-cue" href="#about" aria-label="Continue to about"><span className="chevron chevron-down" aria-hidden="true" /></a>
       </section>
 
       <section className="section about" id="about" data-reveal>
         <div className="about-identity">
-          <p className="kicker">About</p>
+          <p className="kicker">05 About</p>
           <figure className="portrait-frame">
             <Image
               src={portrait}
@@ -206,14 +209,15 @@ export default function Home() {
         </div>
         <div className="about-copy">
           <h2>I’m interested in the whole thing.</h2>
-          <p>I’m a software engineer focused on mobile products and complex interactions. React Native is where I spend most of my time, but frameworks are tools, not identities.</p>
-          <p>I like understanding the system, finding where it bends, and building something simpler, reliable, and pleasant to use.</p>
+          <p>Senior Mobile & Software Engineer with 8 years of experience building and scaling cross-platform applications for international clients. Specializes in navigating complex technical constraints, regulatory integrations (such as healthcare workflows and HL7 standards), and bridging engineering execution with product clarity.</p>
+          <p>I like understanding the system, finding where it bends, and building something simpler, reliable, and pleasant to use. Outside work, the same instinct usually turns into a D&amp;D campaign.</p>
         </div>
-        <aside><span>Currently</span><p>Building mobile software from Brazil, comfortably working in English across international products, platforms, and time zones.</p></aside>
+        <aside><span>Currently</span><p>Building mobile software from Brazil after years of working in English with international products, teams, and stakeholders.</p></aside>
+        <a className="section-cue" href="#contact" aria-label="Continue to contact"><span className="chevron chevron-down" aria-hidden="true" /></a>
       </section>
 
       <footer id="contact" data-reveal>
-        <p className="kicker">Contact</p>
+        <p className="kicker">06 Contact</p>
         <h2>Have a hard problem?<br /><em>Good.</em></h2>
         <div className="footer-bottom">
           <p>Open to thoughtful conversations about products, engineering, and ambitious things worth building.</p>
@@ -224,6 +228,8 @@ export default function Home() {
         </div>
         <div className="footer-meta"><span>© {new Date().getFullYear()}</span><span>Built with care. And CSS.</span></div>
       </footer>
+
+      <BackToTop />
     </main>
   );
 }

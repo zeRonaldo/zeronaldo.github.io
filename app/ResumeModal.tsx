@@ -7,13 +7,13 @@ const roles = [
     period: "2023 — 2026",
     company: "Entermotion Design Studio Inc",
     title: "React Native Developer",
-    summary: "Maintained patient- and provider-facing healthcare apps across iOS and Android using React Native, TypeScript, GraphQL, and Apollo Client. Supported investigation and validation of production bugs.",
+    summary: "Helped build and evolve patient- and provider-facing healthcare applications across iOS and Android using React Native and TypeScript. Worked across complex GraphQL/Apollo data flows, performance, native behavior, application lifecycle, and production debugging",
   },
   {
     period: "2022 — 2023",
     company: "Sortium",
     title: "Frontend Developer",
-    summary: "Built responsive Next.js and TypeScript interfaces and a composable transactional-email system validated across Gmail, Outlook, and mobile devices.",
+    summary: "Built production Next.js and TypeScript experiences for a digital-collectibles platform serving an estimated 40k–60k active users, including responsive, motion-heavy interfaces and a composable transactional-email system validated across Gmail, Outlook, and mobile clients.",
   },
   {
     period: "2021 — 2022",
@@ -42,7 +42,7 @@ export function ResumeModal() {
   const closeResume = () => dialogRef.current?.close();
 
   return (
-    <>
+    <div className="resume-modal-root">
       <button className="resume-trigger" type="button" onClick={openResume}>
         Open résumé <span aria-hidden="true">↗</span>
       </button>
@@ -58,13 +58,19 @@ export function ResumeModal() {
         <article className="resume-sheet">
           <div className="resume-actions" aria-label="Résumé actions">
             <a
-              href="/jose-ronaldo-senior-mobile-engineer-cv.pdf"
+              href="/jose-ronaldo-souza-jr-full-resume.pdf"
               target="_blank"
               rel="noreferrer"
             >
               Full résumé (PDF) ↗
             </a>
-            <button type="button" onClick={() => window.print()}>Print / save PDF</button>
+            <a
+              href="/jose-ronaldo-souza-jr-one-page-resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              One-page résumé (PDF) ↗
+            </a>
             <button type="button" onClick={closeResume} aria-label="Close résumé">Close ×</button>
           </div>
 
@@ -74,7 +80,7 @@ export function ResumeModal() {
               <h2 id="resume-title">José Ronaldo<br />Souza Jr.</h2>
             </div>
             <div className="resume-contact">
-              <strong>Software Engineer · Senior Mobile Engineer</strong>
+              <strong>Senior Software Engineer · Mobile & Product Engineering</strong>
               <span>João Pessoa, Brazil · Remote (UTC-3)</span>
               <a href="mailto:hello@zeronaldo.dev">hello@zeronaldo.dev</a>
               <a href="https://www.linkedin.com/in/zeronaldo" target="_blank" rel="noreferrer">LinkedIn ↗</a>
@@ -105,10 +111,10 @@ export function ResumeModal() {
           <footer className="resume-footer">
             <div><span>Core tools</span><p>React Native · TypeScript · Next.js · GraphQL · Apollo Client · Firebase</p></div>
             <div><span>Product & delivery</span><p>Technical leadership · Stakeholder communication · HL7-based reporting · Web3 APIs</p></div>
-            <div><span>Education</span><p>Bachelor’s degree · Information Technology</p></div>
+            <div><span>Education</span><p>Bachelor’s degree incomplete · Information Technology</p></div>
           </footer>
         </article>
       </dialog>
-    </>
+    </div>
   );
 }

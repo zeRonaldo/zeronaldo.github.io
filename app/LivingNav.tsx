@@ -19,24 +19,42 @@ export function LivingNav() {
     const elements = sections
       .map(({ id }) => document.getElementById(id))
       .filter((element): element is HTMLElement => element !== null);
+    let frame: number | null = null;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const current = entries.find((entry) => entry.isIntersecting);
-        if (!current) return;
+    const updateActiveSection = () => {
+      const headerHeight = document.querySelector<HTMLElement>(".site-header")?.offsetHeight ?? 72;
+      const sampleY = headerHeight + Math.min(window.innerHeight * 0.28, 240);
+      const current = elements.find((element) => {
+        const bounds = element.getBoundingClientRect();
+        return bounds.top <= sampleY && bounds.bottom > sampleY;
+      });
 
-        const id = current.target.id;
-        setActive(id);
+      if (current) {
+        setActive(current.id);
         setVisited((previous) => {
-          if (previous.has(id)) return previous;
-          return new Set(previous).add(id);
+          if (previous.has(current.id)) return previous;
+          return new Set(previous).add(current.id);
         });
-      },
-      { rootMargin: "-18% 0px -68%", threshold: 0 },
-    );
+      } else if (window.scrollY < headerHeight) {
+        setActive(null);
+      }
 
-    elements.forEach((element) => observer.observe(element));
-    return () => observer.disconnect();
+      frame = null;
+    };
+
+    const scheduleUpdate = () => {
+      if (frame !== null) return;
+      frame = window.requestAnimationFrame(updateActiveSection);
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+    return () => {
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+      if (frame !== null) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   return (
@@ -58,5 +76,39 @@ export function LivingNav() {
         );
       })}
     </nav>
+  );
+}
+
+export function BackToTop() {
+  const [onDark, setOnDark] = useState(false);
+
+  useEffect(() => {
+    const updateTone = () => {
+      const sampleY = window.innerHeight - 50;
+      const darkSection = ["method", "contact"].some((id) => {
+        const bounds = document.getElementById(id)?.getBoundingClientRect();
+        return bounds && bounds.top <= sampleY && bounds.bottom >= sampleY;
+      });
+
+      setOnDark(darkSection);
+    };
+
+    updateTone();
+    window.addEventListener("scroll", updateTone, { passive: true });
+    window.addEventListener("resize", updateTone);
+    return () => {
+      window.removeEventListener("scroll", updateTone);
+      window.removeEventListener("resize", updateTone);
+    };
+  }, []);
+
+  return (
+    <a
+      className={`round-link back-to-top${onDark ? " on-dark" : ""}`}
+      href="#top"
+      aria-label="Back to masthead"
+    >
+      <span className="chevron chevron-up" aria-hidden="true" />
+    </a>
   );
 }
